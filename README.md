@@ -73,3 +73,7 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## About the App
+
+Nuxtcipes is a recipe application built with Nuxt 3, following the Nuxt 4 file structure. It includes unit and end-to-end (E2E) test cases to ensure functionality and reliability. The app leverages the dummyJSON API to provide a seamless recipe browsing experience.
