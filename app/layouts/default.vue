@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        <BaseNavigaion />
+        <BaseNavigation />
         <slot />
     </div>
 </template>
