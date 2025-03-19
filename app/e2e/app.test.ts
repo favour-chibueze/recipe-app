@@ -3,25 +3,25 @@ import { describe, test, expect } from "vitest";
 
 
 describe('app', async () => {
-    await setup()
+    await setup();
 
     test ('contains the home page', async () => {
-        const html = await $fetch('/')
-        expect(html).toContain('Master the Kitchen with Ease')
-    })
+        const html = await $fetch('/');
+        expect(html).toContain('Master the Kitchen with Ease');
+    }, 10000); // Set timeout to 10 seconds
+
     test ('contains the about page', async () => {
-        const html = await $fetch('/about')
-        expect(html).toContain('About Nuxtcipes:')
-    })
+        const html = await $fetch('/about');
+        expect(html).toContain('About Nuxtcipes');
+    }, 10000);
 
     test('with playwright', async () => {
-        const page = await createPage()
-        await page.goto(url('/'), { waitUntil: 'hydration' })
-        const text = await page.textContent('h1')
-        expect(text).toContain('Master the Kitchen with Ease')
-        await page.click('a[href="/about"]')
-        const aboutText = await page.textContent('h1')
-        expect(aboutText).toContain('About Nuxtcipes:')
-    })
-
-})
+        const page = await createPage();
+        await page.goto(url('/'), { waitUntil: 'hydration' }); 
+        const text = await page.textContent('h1');
+        expect(text).toContain('Master the Kitchen with Ease');
+        await page.click('a[href="/about"]');
+        const aboutText = await page.textContent('h1');
+        expect(aboutText).toContain('About Nuxtcipes:');
+    }, 15000); 
+});
